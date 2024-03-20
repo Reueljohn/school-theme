@@ -56,16 +56,18 @@ get_header();
 
 									if ( $query -> have_posts() ){
 										// Output Term Name
+										echo '<div class="staff-wrapper">';
 										echo '<h2>' . esc_html( $term->name ) . '</h2>'; 
+										echo '<section class="staff-section">';
 
 										// Output Content 
 										while ( $query -> have_posts() ) {
 											$query -> the_post();
-
+											echo '<article class="staff-item">';
 											if ( function_exists( 'get_field' ) ) {
 												if ( get_field( 'staff_bio' ) ) {
-													echo '<h3 id="'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</h3>';
-													the_field( 'staff_bio' );
+													echo '<h3>'. esc_html( get_the_title() ) .'</h3>';
+													echo '<p>'. the_field( 'staff_bio' ) .'</p>';
 												}
                                                 if ( get_field( 'courses' ) ) {
                                                     echo '<p>'. esc_html( get_field('courses') ) .'</p>';
@@ -74,9 +76,11 @@ get_header();
                                                     echo '<a href="'. get_field('instructor_website') .'" >Instructor Website</a>';
 												}
 											}
-									
+											echo '</article>'; 
 										}
 										wp_reset_postdata();
+										echo '</section>'; 
+										echo '</div>'; 
 									}
 								}
 							}
@@ -92,6 +96,6 @@ get_header();
 	</main>
 
 <?php
-get_sidebar();
+// get_sidebar();
 // get_sidebar('sidebar-2');
 get_footer();

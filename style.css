@@ -722,6 +722,58 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+/* STAFF PAGE 
+--------------------------------------------- */
+.staff-wrapper h2 {
+	margin: 0;
+	text-decoration: underline;
+}
+
+.staff-section {
+	margin-bottom: 3rem;
+}
+
+.staff-section h3 {
+	margin-bottom: 0.5rem;
+}
+
+.staff-item {
+	margin-right: 4rem;
+}
+
+.staff-item a {
+	text-decoration: none;
+	color: #191970;
+	font-weight: bold;
+}
+
+@media (min-width: 37.5em) {
+	.staff-section {
+		display: flex;
+		/* flex-direction: row; */
+		justify-content: space-between;
+		/* margin-bottom: 2rem; */
+	}
+	.staff-section h2 {
+		width: 100%;
+	}
+
+	/* .staff-item {
+		display: flex;
+		flex-direction: column;
+	} */
+}
+
+/* Schedule Page
+--------------------------------------------- */
+.table-label {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
