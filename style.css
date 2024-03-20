@@ -770,7 +770,29 @@ textarea {
 	display: block;
 	text-align: center;
 	font-weight: bold;
+	color: white;
+	font-size: 3rem;
+	text-shadow: 2px 2px 2px black;
+	background-color: lightblue;
+}
 
+table {
+	background-color: lightblue;
+	padding: 1rem;
+}
+
+td {
+	padding: 0.5rem;
+	text-align: center;
+}
+
+.schedule-dates {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.schedule-course {
+	font-weight: bold;
 }
 
 

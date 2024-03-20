@@ -30,6 +30,7 @@ get_header();
                    <!-- TABLE -->
 
 					<label class="table-label"> Weekly Course Schedule </label>
+					<br>
 					<table>
                 	<?php 
                 
@@ -42,12 +43,10 @@ get_header();
 					// Loop through rows.
 					while( have_rows('course_schedule') ) : the_row();
 
-						$first_row_title = get_sub_field('title');
-
 						// Load sub field value.
 						$sub_value = get_sub_field('date');
 						// Output Table Data
-						echo '<td>'. $sub_value .'<td>';
+						echo '<td class="schedule-dates">'. $sub_value .'<td>';
 					// End loop.
 					endwhile;
 					?>
@@ -61,7 +60,7 @@ get_header();
 						// Load sub field value.
 						$sub_value = get_sub_field('course');
 						// Output Table Data
-						echo '<td>'. $sub_value .'<td>';
+						echo '<td class="schedule-course">'. $sub_value .'<td>';
 					// End loop.
 					endwhile;
 					?>
@@ -75,7 +74,9 @@ get_header();
 						// Load sub field value.
 						$sub_value = get_sub_field('instructor');
 						// Output Table Data
+						// echo '<tr>';
 						echo '<td>'. $sub_value .'<td>';
+						// echo '<tr>';
 					// End loop.
 					endwhile;
 					?>
