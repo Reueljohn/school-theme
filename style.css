@@ -785,6 +785,147 @@ table, th, td {
 	border: 1px solid white;
   }
 
+
+/* Styling for Students Section 
+_____________________________________________________________________________*/
+
+
+/* Default styles */
+.student-thumbnail {
+    display: inline-block;
+    width: 300px; 
+    height: 257px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-content: center;
+}
+
+.student-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.student-thumbnail {
+    width: 100%;
+    max-width: 300px; 
+}
+
+.student-content {
+    margin-top: 10px;
+}
+
+.student-title {
+    margin: 0;
+    font-size: 28px;
+    text-decoration-line: none;
+}
+
+.student-thumbnail-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.student-thumbnail:hover .student-thumbnail-image {
+    transform: scale(0.95);
+}
+
+.student-header {
+    padding-left: 120px;
+}
+
+.student-terms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+	margin-right: 20px;
+}
+
+
+/* Single Work Post Page */
+.single-school-student .site {
+	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+	grid-template-areas:
+	  "header header header"
+	  ". main ."
+	  "footer footer footer";
+  }
+
+.student-entry-categories {
+
+    margin: 0 auto 20px; /* Center the section horizontally and add bottom margin */
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.single-school-student #primary {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px; /* Adjust the maximum width as needed */
+}
+
+/* Center the featured image */
+.single-school-student .entry-content img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+    .single-school-student #primary {
+        padding: 10px;
+    }
+}
+
+
+/* Responsive layout */
+@media screen and (min-width: 600px) {
+
+    .student-entry-categories {
+
+        margin: 20px;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .student-grid {
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 20px; 
+    }
+    .student-entry {
+        padding: 15px; 
+    }
+    .student-thumbnail {
+        width: 100%; 
+        max-width: none; 
+        height: auto; 
+    }
+    .student-title {
+        font-size: 22px; 
+    }
+    .student-header {
+        padding-left: 20px;
+    }
+}
+
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
