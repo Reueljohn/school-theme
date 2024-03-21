@@ -23,10 +23,6 @@ function fwd_register_custom_post_types() {
         'filter_item_list'      => __( 'Filter staff list'),
         'items_list_navigation' => __( 'Staff list navigation'),
         'items_list'            => __( 'Staff list'),
-        // 'featured_image'        => __( 'Staff featured image'),
-        // 'set_featured_image'    => __( 'Set staff featured image'),
-        // 'remove_featured_image' => __( 'Remove staff featured image'),
-        // 'use_featured_image'    => __( 'Use as featured image'),
     );
 
     $args = array(
@@ -37,7 +33,6 @@ function fwd_register_custom_post_types() {
         'show_in_menu'       => true,
         'show_in_nav_menus'  => true,
         'show_in_admin_bar'  => true,
-        // 'show_in_rest'       => true,
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'staff' ),
         'capability_type'    => 'post',
@@ -46,7 +41,6 @@ function fwd_register_custom_post_types() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-businessperson',
         'supports'           => array( 'title' ),
-        // 'thumbnail', 'editor' 
     );
 
     register_post_type( 'school-staff', $args );

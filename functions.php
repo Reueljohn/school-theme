@@ -149,15 +149,6 @@ function school_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
 
-// function fwd_register_custom_post_types() {
-//     $args = array(
-//         'public' => true,
-//         'label'  => 'Staff'
-//     );
-//     register_post_type( 'fwd-staff', $args );
-// }
-// add_action( 'init', 'fwd_register_custom_post_types' );
-
 // Replace "Add Title" placeholder text on Staff CPT 
 function wpb_change_title_text( $title ){
 	$screen = get_current_screen();
