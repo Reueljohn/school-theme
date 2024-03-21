@@ -79,6 +79,8 @@ function fwd_register_taxonomies() {
 }
 add_action( 'init', 'fwd_register_taxonomies');
 
+function register_custom_post_types() {
+
  // Register Works
  $labels = array(
     'name'                  => _x( 'Students', 'post type general name' ),
@@ -129,6 +131,7 @@ $args = array(
 );
 
 register_post_type( 'school-student', $args );
+}
 
 add_action( 'init', 'register_custom_post_types' );
 
@@ -170,5 +173,15 @@ function fwd_rewrite_flush() {
     fwd_register_custom_post_types();
     fwd_register_taxonomies(); 
     flush_rewrite_rules();
+
+    register_taxonomies();
+    register_custom_post_types();
 }
 add_action( 'after_switch_theme', 'fwd_rewrite_flush' );
+
+// function rewrite_flush() {
+//     register_custom_post_types();
+//     flush_rewrite_rules();
+//     register_taxonomies();
+// }
+// add_action( 'after_switch_theme', 'rewrite_flush' );
