@@ -750,18 +750,11 @@ textarea {
 @media (min-width: 37.5em) {
 	.staff-section {
 		display: flex;
-		/* flex-direction: row; */
 		justify-content: space-between;
-		/* margin-bottom: 2rem; */
 	}
 	.staff-section h2 {
 		width: 100%;
 	}
-
-	/* .staff-item {
-		display: flex;
-		flex-direction: column;
-	} */
 }
 
 /* Schedule Page
@@ -770,6 +763,7 @@ textarea {
 	display: block;
 	text-align: center;
 	font-weight: bold;
+	padding-bottom: .5rem;
 	color: white;
 	font-size: 3rem;
 	text-shadow: 2px 2px 2px black;
@@ -779,6 +773,7 @@ textarea {
 table {
 	background-color: lightblue;
 	padding: 1rem;
+	border-collapse: collapse;
 }
 
 td {
@@ -786,15 +781,9 @@ td {
 	text-align: center;
 }
 
-.schedule-dates {
-	text-decoration: underline;
-	font-weight: bold;
-}
-
-.schedule-course {
-	font-weight: bold;
-}
-
+table, th, td {
+	border: 1px solid white;
+  }
 
 /* Comments
 --------------------------------------------- */
