@@ -19,6 +19,11 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
+
+
+
+
 function school_theme_setup() {
 	/*
 		* Make theme available for translation.
@@ -45,6 +50,8 @@ function school_theme_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+
+	add_image_size( 'student-crop', 200, 300, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -150,9 +157,15 @@ function school_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
 
 /**
+ * Register custom post types and custom taxonomies
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
 
 /**
  * Custom template tags for this theme.
