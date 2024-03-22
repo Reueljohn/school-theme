@@ -45,7 +45,6 @@ function school_theme_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'student-crop', 200, 300, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -150,6 +149,15 @@ function school_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
 
+// function fwd_register_custom_post_types() {
+//     $args = array(
+//         'public' => true,
+//         'label'  => 'Staff'
+//     );
+//     register_post_type( 'fwd-staff', $args );
+// }
+// add_action( 'init', 'fwd_register_custom_post_types' );
+
 // Replace "Add Title" placeholder text on Staff CPT 
 function wpb_change_title_text( $title ){
 	$screen = get_current_screen();
@@ -161,8 +169,25 @@ function wpb_change_title_text( $title ){
 	return $title;
 }
   
-add_filter( 'enter_title_here', 'wpb_change_title_text' );
+function theme_prefix_register_footer_menu() {
+    register_nav_menu('footer-menu', __('Footer Menu', 'theme-textdomain'));
+}
+add_action('after_setup_theme', 'theme_prefix_register_footer_menu');
 
+function enqueue_aos_for_posts() {
+    // Enqueue AOS CSS
+    wp_enqueue_style('aos-css', get_template_directory_uri() .'/aos/aos.css', array(), '2.3.1');
+
+    // Enqueue AOS JS
+    wp_enqueue_script('aos-js', get_template_directory_uri() .'/aos/aos.js', array('jquery'), '2.3.1', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_aos_for_posts');
+
+
+function theme_prefix_setup() {
+    add_theme_support('custom-logo');
+}
+add_action('after_setup_theme', 'theme_prefix_setup');
 // Custom Post Types & Taxonomies 
 require get_template_directory() . '/inc/cpt-taxonomy.php';  
 
